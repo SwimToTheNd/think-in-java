@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+	}
+	repositories {
+		maven {
+			url 'http://localhost:8081/repository/maven-public/'
+		}
+	}
+	dependencies {
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = 'com.me.thinkinginjava'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	maven {
+		url 'http://localhost:8081/repository/maven-public/'
+	}
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java' 
+        }
+        resources {
+            srcDir 'src/main/resources' 
+        }
+    }
+}
+
+dependencies {
+
+	compile "org.openjdk.jol:jol-core:0.10"
+	testImplementation 'junit:junit:4.12'
+}
